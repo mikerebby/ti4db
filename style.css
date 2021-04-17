@@ -1,4 +1,219 @@
+*,
+::before,
+::after {
+  box-sizing:inherit;
+}
 
 :root {
-  
+  --bg: #111111;
+  --text: #f1f2f2;
+  --font-size:16px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Dela Gothic One', cursive;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  margin:auto;
+  font-size:var(--font-size);
+  color:var(--text);
+  background-color:var(--bg);
+  line-height: 1.5em;
+  position: relative;
+}
+
+#logo {
+  width:200px;
+  margin-right:1em;
+}
+
+img,
+.icon {
+  width:10em;
+  position:relative;
+  z-index: 1;
+}
+
+.subtitle {
+  width:1em;
+}
+
+.container a {
+  background-color:rgb(88, 61, 196, 100);
+  text-decoration: none;
+  color:var(--text);
+  display:block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 150ms;
+  transition-property: background-color;
+}
+
+
+.container #technology a:hover {
+  background-color: rgb(213, 235, 93);
+}
+
+.container #factions a:hover {
+  background-image:none;
+  background-color: rgb(207, 43, 77);
+}
+
+.container {
+  display:grid;
+  margin:0;
+  height:100vh;
+  width:100vw;
+  grid-gap:0.5em;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(4,1fr);
+  grid-template-areas:
+  "ref agendas technology"
+  "ref objectives technology"
+  "strategy actions faction"
+  "systems systems faction"
+}
+
+#reference {
+  background-image:url("ref.jpg");
+  background-size:cover;
+  grid-area: ref;
+  line-height: 1em;
+}
+
+#factions {
+  grid-area: faction;
+}
+
+#technology {
+
+
+  grid-area: technology;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#objectives {
+
+
+  grid-area: objectives;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#agendas {
+
+
+  grid-area: agendas;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#systems {
+
+  grid-area: systems;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#action {
+
+
+  grid-area: actions;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#strategy {
+
+  grid-area: strategy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media screen and (max-width:766px) {
+
+  .subtitle {
+    font-size:0.5em;
+    line-height: 1em;
+  }
+
+  img .logo {
+    width:150px;
+  }
+
+    .container {
+      display:grid;
+      width:auto;
+      grid-template-columns:repeat(1,1fr);
+      grid-template-rows:repeat(8,0.5fr);
+      grid-template-areas:
+      "systems"
+      "strategy"
+      "actions"
+      "agendas"
+      "objectives"
+      "faction"
+      "technology"
+      "ref"
+    }
+
+  }
+
+
+@media screen and (min-width:766px) {
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  #reference {
+    background-color:;
+    background-image:url("ref.jpg");
+    background-size:cover;
+    grid-area: ref;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1em;
+  }
+}
+
+@media screen and (min-width:1400px) {
+
+  h1 {
+    font-size:2em;
+  }
+
+  #reference {
+    background-color:;
+    background-image:url("ref.jpg");
+    background-size:cover;
+    grid-area: ref;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    line-height: 1em;
+  }
+
 }
